@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Разговоры по душам)</title>
+
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/druzhok');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --color1: white;
+            --color2: black;
+        }
+
+        body, html {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Druzhok', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('back.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+        }
+
+        .nav-bar {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            position: relative;
+            color: var(--color1);
+            height: 60px;
+            text-align: center;
+        }
+
+        .nav-bar a {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--color1);
+            padding: 10px 45px;
+            text-align: center;
+            transition: 0.15s ease-in-out;
+            position: relative;
+            text-transform: uppercase;
+        }
+
+        .nav-bar a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color1);
+            transition: 0.5s ease-in-out;
+        }
+
+        .nav-bar a:hover:after {
+            width: 100%;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .menu li a {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--color2);
+            text-align: center;
+            transition: 0.15s ease-in-out;
+            position: relative;
+            text-transform: uppercase;
+            font-size: x-large;
+        }
+
+        .menu li a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color2);
+            transition: 0.5s ease-in-out;
+        }
+
+        .menu li a:hover:after {
+            width: 100%;
+        }
+
+        .open-menu,
+        .close-menu {
+            position: absolute;
+            color: var(--color2);
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: none;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+        .close-menu {
+            font-size: 1.8rem;
+            top: 31px;
+            right: 21px;
+        }
+
+        #check {
+            display: none;
+        }
+
+        @media (max-width: 767px) {
+            .menu {
+                flex-direction: column;
+                align-items: center;
+                width: 70%;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                z-index: 100;
+                background-color: white;
+                transition: all 0.4s ease-in-out;
+            }
+
+            .menu li {
+                margin-top: 60px;
+            }
+
+            .menu li a {
+                padding: 10px;
+            }
+
+            .open-menu,
+            .close-menu {
+                display: block;
+            }
+
+            #check:checked~.menu {
+                right: 0;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul class='nav-bar'>
+                <input type='checkbox' id='check' />
+                <span class="menu">
+                    <li><a href="love.html">Love</a></li>
+                    <li><a href="sadness.html">Sadness</a></li>
+                    <li><a href="calm.html">Calm</a></li>
+                    <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+                </span>
+                <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+            </ul>
+        </nav>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuItems = document.querySelectorAll('.menu a');
+
+            menuItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    const pageId = this.getAttribute('href');
+                    window.location.href = pageId;
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
