@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/druzhok">
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/red-hat-display">
@@ -11,6 +12,7 @@
             margin: 0;
             padding: 0;
             font-family: 'Druzhok', sans-serif;
+            background-color: #f5f5f5; /* Цвет фона */
         }
 
         h2 {
@@ -19,8 +21,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 35vh;
+            height: 10vh;
             margin: 0;
+            background-color: #0088cc; /* Цвет заголовка */
+            color: white; /* Цвет текста заголовка */
         }
 
         .container {
@@ -28,29 +32,27 @@
             flex-wrap: wrap;
             justify-content: flex-start;
             width: 100%;
+            padding: 10px;
         }
 
         .box {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            width: -webkit-fit-content;
-            width: -moz-fit-content;
-            width: fit-content;
-            padding: 0.5rem 1rem;
-            margin: 0.5rem;
-            background: #333;
-            border-radius: 1.125rem 1.125rem 1.125rem 0;
+            width: 70%; /* Уменьшим ширину сообщений для более узкого вида на телефоне */
+            padding: 15px;
+            margin: 10px;
+            background: #0088cc;
+            border-radius: 10px;
             min-height: 2.25rem;
             box-sizing: border-box;
             box-shadow: 0 0 2rem rgba(0, 0, 0, 0.075), 0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.1);
             cursor: pointer;
             transition: transform 0.3s ease;
             color: white;
-            max-width: 380px;
             font-family: 'Red Hat Display', sans-serif;
             font-weight: 300;
-            line-height: 1.25em;
+            line-height: 1.5;
         }
 
         .box:hover {
@@ -61,9 +63,9 @@
             display: none;
         }
 
-        @media (max-width: 5280px) {
-            .container {
-                flex-direction: column;
+        @media (max-width: 768px) {
+            .box {
+                width: 90%; /* Для более узкого вида на телефоне */
             }
         }
     </style>
@@ -74,12 +76,13 @@
     <h2>ЛЮБОВЬ</h2>
 
     <div class="container">
-        <div class="box"> We all want to be seen. when you read, see or hear something that reminds you of a friend, do you reach out and tell them? is there a friend you can encourage today? how? </div>
+        <div class="box"> We all want to be seen. When you read, see, or hear something that reminds you of a friend, do you reach out and tell them? Is there a friend you can encourage today? How? </div>
         <div class="box"> What is taking you most of your headspace? </div>
-        <div class="box"> Что то на русском  </div>
+        <div class="box"> Что-то на русском  </div>
     </div>
 
 </body>
 
 </html>
+
 
