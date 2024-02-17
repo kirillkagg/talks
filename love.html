@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/druzhok">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Druzhok', sans-serif;
+        }
+
+        h2 {
+            font-family: 'Druzhok', sans-serif;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 35vh; /* Высота 35% видимой части окна браузера */
+            margin: 0;
+            background: url('x.png') center center / cover no-repeat; /* Добавление фото в качестве фона */
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            width: 100%;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: fit-content;
+            padding: 10px;
+            margin: 20px;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border-radius: 15px;
+        }
+
+        .box:hover {
+            transform: scale(1.02);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 1440px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>ЛЮБОВЬ</h2>
+
+    <div class="container">
+        <div class="box"> We all want to be seen. when you read, see or hear something that reminds you of a friend, do you reach out and tell them? is there a friend you can encourage today? how? </div>
+        <div class="box"> What is taking you most of your headspace? </div>
+        <div class="box"> How are you, really? </div>
+    </div>
+
+</body>
+
+</html>
