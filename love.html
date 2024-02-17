@@ -1,88 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/druzhok">
-    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/red-hat-display">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Druzhok', sans-serif;
-            background-color: #f5f5f5; /* Цвет фона */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Page Title</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
 
-        h2 {
-            font-family: 'Druzhok', sans-serif;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 10vh;
-            margin: 0;
-            background-color: #0088cc; /* Цвет заголовка */
-            color: white; /* Цвет текста заголовка */
-        }
+    .layer1 {
+      font-family: 'Druzhok', sans-serif;
+      width: 100%;
+      height: 100vh;
+      background-color: white;
+      display: flex;
+      align-items: center; /* центрирование по вертикали */
+      justify-content: center; /* центрирование по горизонтали */
+    }
 
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            width: 100%;
-            padding: 10px;
-        }
+    .layer2 {
+      width: 100%;
+      height: 3000px;
+      background-color: white;
+      font-family: 'Druzhok', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* изменено значение align-items */
+      justify-content: flex-start; /* изменено значение justify-content */
+      height: 100vh;
+    }
 
-        .box {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            width: 70%; /* Уменьшим ширину сообщений для более узкого вида на телефоне */
-            padding: 15px;
-            margin: 10px;
-            background: #0088cc;
-            border-radius: 10px;
-            min-height: 2.25rem;
-            box-sizing: border-box;
-            box-shadow: 0 0 2rem rgba(0, 0, 0, 0.075), 0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            color: white;
-            font-family: 'Red Hat Display', sans-serif;
-            font-weight: 300;
-            line-height: 1.5;
-        }
+    .container {
+      max-width: 767px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 0 auto; /* оставляем auto для центрирования по горизонтали */
+    }
 
-        .box:hover {
-            transform: scale(1.02);
-        }
+    .messages {
+      padding: 20px;
+      overflow-y: auto;
+      max-height: auto;
+    }
 
-        .hidden {
-            display: none;
-        }
+    .message {
+      background-color: #e2e2e2;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      max-width: 80%;
+    }
 
-        @media (max-width: 768px) {
-            .box {
-                width: 90%; /* Для более узкого вида на телефоне */
-            }
-        }
-    </style>
+    @media (max-width: 767px) {
+      body {
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+
+      .container {
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0 0 0 0;
+      }
+
+      .message {
+        max-width: 80%;
+      }
+    }
+
+  </style>
 </head>
-
 <body>
 
-    <h2>ЛЮБОВЬ</h2>
-
-    <div class="container">
-        <div class="box"> We all want to be seen. When you read, see, or hear something that reminds you of a friend, do you reach out and tell them? Is there a friend you can encourage today? How? </div>
-        <div class="box"> What is taking you most of your headspace? </div>
-        <div class="box"> Что-то на русском  </div>
+  <div class="layer1">
+    <div class="heading-container">
+      <h2>LOVE</h2>
     </div>
+  </div>
+
+  <div class="layer2">
+    <div class="container">
+      <div class="messages">
+        <div class="message">We all want to be seen. When you read, see, or hear something that reminds you of a friend, do you reach out and tell them? Is there a friend you can encourage today? How?</div>
+        <div class="message">What is taking you most of your headspace?</div>
+        <div class="message">Что-то на русском</div>
+      </div>
+    </div>
+  </div>
 
 </body>
-
 </html>
-
-
