@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Page Title</title>
   <style>
-    body, html {
+    @import url('https://fonts.cdnfonts.com/css/druzhok');
+
+    body,
+    html {
       margin: 0;
       padding: 0;
       height: 100%;
@@ -17,8 +21,10 @@
       height: 100vh;
       background-color: white;
       display: flex;
-      align-items: center; /* центрирование по вертикали */
-      justify-content: center; /* центрирование по горизонтали */
+      align-items: center;
+      justify-content: center;
+      opacity: 0; /* добавлено начальное значение прозрачности */
+      animation: fadeIn 1s ease-in-out forwards; /* добавлено анимация плавного появления */
     }
 
     .layer2 {
@@ -30,18 +36,18 @@
       padding: 0;
       display: flex;
       flex-direction: column;
-      align-items: flex-start; /* изменено значение align-items */
-      justify-content: flex-start; /* изменено значение justify-content */
+      align-items: flex-start;
+      justify-content: flex-start;
       height: 100vh;
     }
 
     .container {
-      max-width: 767px;
+      width: 767px;
       background-color: #fff;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       overflow: hidden;
-      margin: 0 auto; /* оставляем auto для центрирования по горизонтали */
+      margin: 0 auto;
     }
 
     .messages {
@@ -76,8 +82,15 @@
       }
     }
 
+    /* добавленный стиль анимации */
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <div class="layer1">
@@ -87,14 +100,34 @@
   </div>
 
   <div class="layer2">
-    <div class="container">
+    <div class="container" id="scrollToThis">
       <div class="messages">
-        <div class="message">We all want to be seen. When you read, see, or hear something that reminds you of a friend, do you reach out and tell them? Is there a friend you can encourage today? How?</div>
-        <div class="message">What is taking you most of your headspace?</div>
-        <div class="message">Что-то на русском</div>
+        <div class="message">
+          <p>What's your name?</p>
+          <p>And the most beautiful thing about you?</p>
+        </div>
+        <div class="message">
+          <p>Do you like who you are?</p>
+        </div>
+        <div class="message">
+          <p>What worries you most about your future?</p>
+        </div>
+        <div class="message">
+          <p>What's the most pain you've ever felt that wasn't physical?</p>
+        </div>
       </div>
     </div>
   </div>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const container = document.getElementById('scrollToThis');
+      setTimeout(function () {
+        container.scrollIntoView({ behavior: 'smooth' });
+      }, 1500);
+    });
+  </script>
+
 </body>
+
 </html>
