@@ -23,8 +23,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      opacity: 0;
-      animation: fadeIn 1s ease-in-out forwards;
+      opacity: 0; /* добавлено начальное значение прозрачности */
+      animation: fadeIn 1s ease-in-out forwards; /* добавлено анимация плавного появления */
     }
 
     .layer2 {
@@ -80,13 +80,9 @@
       .message {
         max-width: 80%;
       }
-
-      .layer1 {
-        animation: none; /* отключаем анимацию на мобильных устройствах */
-        opacity: 1; /* устанавливаем прозрачность на максимум, чтобы контейнер сразу отображался */
-      }
     }
 
+    /* добавленный стиль анимации */
     @keyframes fadeIn {
       to {
         opacity: 1;
@@ -135,4 +131,3 @@
 </body>
 
 </html>
-
